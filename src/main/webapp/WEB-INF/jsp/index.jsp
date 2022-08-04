@@ -17,6 +17,7 @@
     <title>main</title>
     <style id="applicationStylesheet" type="text/css">
         #main {
+            position: absolute;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -26,120 +27,59 @@
             background-color: rgba(39,53,72,1);
         }
         #SignInBox {
-            width: 500px;
-            height: 500px;
-        }
-        #bg_SignInBox {
-            fill: rgba(255,255,255,1);
-            stroke: rgba(112,112,112,1);
-            stroke-width: 1px;
-            stroke-linejoin: miter;
-            stroke-linecap: butt;
-            stroke-miterlimit: 4;
-            shape-rendering: auto;
-        }
-        .bg_SignInBox {
-            width: 500px;
-            height: 500px;
-        }
-        #inputbox_password {
-            fill: rgba(255,255,255,1);
-            stroke: rgba(112,112,112,1);
-            stroke-width: 1px;
-            stroke-linejoin: miter;
-            stroke-linecap: butt;
-            stroke-miterlimit: 4;
-            shape-rendering: auto;
-        }
-        .inputbox_password {
-            position: absolute;
-            overflow: visible;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             width: 300px;
-            height: 50px;
-            left: 100px;
-            top: 345px;
+            height: 300px;
+            background-color: rgba(255,255,255);
+            border-radius: 3px;
         }
-        #inputbox_name {
-            fill: rgba(255,255,255,1);
-            stroke: rgba(112,112,112,1);
-            stroke-width: 1px;
-            stroke-linejoin: miter;
-            stroke-linecap: butt;
-            stroke-miterlimit: 4;
-            shape-rendering: auto;
-        }
-        .inputbox_name {
-            position: absolute;
-            overflow: visible;
-            width: 300px;
-            height: 50px;
-            left: 100px;
-            top: 280px;
-        }
-        #gb_signIn {
-            position: absolute;
-            width: 300px;
-            height: 50px;
-            left: 100px;
-            top: 410px;
-            overflow: visible;
-        }
-        #bg_signIn {
-            fill: rgba(89,160,255,1);
-        }
-        .bg_signIn {
-            position: absolute;
-            overflow: visible;
-            width: 300px;
-            height: 50px;
-            left: 0px;
-            top: 0px;
-        }
-        #txt_signIn {
-            left: 115px;
-            top: 12px;
-            position: absolute;
-            overflow: visible;
-            width: 71px;
-            white-space: nowrap;
-            text-align: left;
-            font-family: Arial;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 21px;
-            color: rgba(255,255,255,1);
-        }
-        .button{
+
+        .inputBox{
+            width: 100%;
+            height: 25px;
+            border: solid 1px #9F9F9F;
             cursor: pointer;
+            font-size: 10px;
+            box-sizing: border-box;
+            padding-left: 2px;
         }
+
+        .inputBox:focus{
+            border: solid 1px #9F9F9F;
+        }
+
+        .btnSignIn{
+            width: 100%;
+            height: 25px;
+            border: 0;
+            cursor: pointer;
+            font-size: 10px;
+            color: white;
+            background-color: rgba(39,53,72,1);
+        }
+
+        .contentBox{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+        }
+
     </style>
+    <script id="applicationScript" type="text/javascript" src="main.js"></script>
 </head>
 <body>
 <div id="main">
     <div id="SignInBox">
-        <svg class="bg_SignInBox">
-            <rect id="bg_SignInBox" rx="43" ry="43" x="0" y="0" width="500" height="500">
-            </rect>
-        </svg>
-        <svg class="inputbox_password">
-            <rect id="inputbox_password" rx="0" ry="0" x="0" y="0" width="300" height="50">
-            </rect>
-        </svg>
-        <svg class="inputbox_name">
-            <rect id="inputbox_name" rx="0" ry="0" x="0" y="0" width="300" height="50">
-            </rect>
-        </svg>
-        <button class="button">
-        <div id="gb_signIn">
-            <svg class="bg_signIn">
-                <rect id="bg_signIn" rx="10" ry="10" x="0" y="0" width="300" height="50">
-                </rect>
-            </svg>
-            <div id="txt_signIn">
-                <span>Sign In</span>
-            </div>
+        <div class="contentBox">
+            <input type="text" class="inputBox" placeholder="아이디" style="margin-bottom: 15px">
+            <input type="text" class="inputBox" placeholder="비밀번호" style="margin-bottom: 15px">
+            <button class="btnSignIn">로그인</button>
         </div>
-        </button>
     </div>
 </div>
 </body>
